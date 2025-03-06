@@ -207,6 +207,11 @@ type StartGame struct {
 	PlayerMovementSettings protocol.PlayerMovementSettings
 	// Time is the total time that has elapsed since the start of the world.
 	Time int64
+	// Items is a list of all items with their legacy IDs which are available in the game. Failing to send any
+	// of the items that are in the game will crash mobile clients.
+	// TODO: This is just here to easily support legacy versions.
+	// Since 1.21.60, the server sends the ItemRegistry packet instead.
+	Items []protocol.ItemEntry
 	// EnchantmentSeed is the seed used to seed the random used to produce enchantments in the enchantment
 	// table. Note that the exact correct random implementation must be used to produce the correct results
 	// both client- and server-side.
