@@ -1219,6 +1219,7 @@ func (conn *Conn) handleStartGame(pk *packet.StartGame) error {
 		CreatedInEditor:              pk.CreatedInEditor,
 		ExportedFromEditor:           pk.ExportedFromEditor,
 		PersonaDisabled:              pk.PersonaDisabled,
+		Items:                        data.Items, // For clients below 1.21.60.		
 		CustomSkinsDisabled:          pk.CustomSkinsDisabled,
 		GameRules:                    pk.GameRules,
 		Time:                         pk.Time,
